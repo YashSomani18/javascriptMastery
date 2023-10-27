@@ -1,0 +1,112 @@
+
+CONST PUSH WITHOUT ERROR:-
+
+const fruits = ["apple","mango"];
+fruits.push("banana");
+console.log(fruits);
+
+Here we can push into a const because we store the array in the heap memory and fruits here
+store only the memory of that location. So as we push into it we are not selection new location
+or new address to it we are just pushing into the current location only
+
+
+If we do like fruits = [] something something then we are changing the location and this is not
+acceptablable for the const
+
+
+------------------------------------------------------------------------
+
+For of Loop
+for(let fruit of fruits){
+    console.log(fruit);
+}
+This is another way of traversing over array like python or C++
+---------------------------------------------------------------------
+
+
+
+For in Loop
+for(let index in fruits){
+    console.log(index , fruits[index]);
+}
+
+ when we use "in" here then we are dealing with the index
+
+------------------------------------------------------------------------
+
+Destructuring of array
+const myArray = [v1, v2 , v3 , v4];
+
+const[var1 , var2] = myArray;
+
+this way we are giving var1 = v1; and var2 = v2
+
+we can skip one like this const[var1 , , var3] = myArray;
+we can store first two in two differet variables and all the rest as new array in this way
+const [var1 , var2 , ...myNewArray] = myArray
+so myNewArray = [v3,v4];
+
+---------------------------------------------------------------------------------
+
+OBJECT in Js
+
+key is always string so person["name"] = person.name 
+if we want to create a new field in the person
+const person = {
+    name: "Yash",
+    age:23,
+    hobbies:["cricket","reading"]
+}
+
+person.gender ="Male"
+
+then it will create a gender specification in it
+you can write name in the object like 
+person = {
+    name:
+    "name"
+}
+
+both ways are correct
+
+also if you want to give key name with a space between 2 letters
+like
+
+
+const person={
+    "person hobbies":[]
+}
+
+then you have to give "" and then use it and when u have to access it 
+person.person hobbies is wrong way
+you can only use square bracket
+person["person hobbies"];
+
+----
+mast chz
+
+const key = "email"
+
+person[key]="yashsomani@gmail.com"
+
+then log will show email:yashsomani@gmail.com
+
+when we need to traverse over object in for Loop we need to use square bracket in place of dot(.)
+
+
+for(let key in person){
+    log(person.key); // will give 
+    log(person[key]); // this will give you result
+}
+
+----------
+Computed Properties
+const key1 = ob1;
+const key2 = ob2;
+
+const obj = {
+    [key1]:"hello",
+    [key2]:"world"
+    //now it will show ob1 : hello , ob2 : world in the console.log
+}
+
