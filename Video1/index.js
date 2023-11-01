@@ -22,7 +22,35 @@ for(let fruit of fruits){
 
 //For in Loop
 for(let index in fruits){
-    console.log(index , fruits[index]);
+    // console.log(index , fruits[index]);
 }
 
 // when we use "in" here then we are dealing with the index
+
+
+const numbers = [1,2,3,5]
+
+function myFunc(number ,index){
+    // console.log(`The index is ${index} and number is ${number}`)
+}
+
+numbers.forEach(myFunc);
+
+
+
+const user1 ={
+    name:"harsh",
+    age: 8,
+    about:function(hobby , musician){
+        console.log(hobby ,musician);
+    }
+}
+
+
+const user2={
+    name:"yash",
+    age: 10
+}
+
+user1.about.apply(user2 ,[ 'violin', 'arijit']);
+

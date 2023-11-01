@@ -110,3 +110,71 @@ const obj = {
     //now it will show ob1 : hello , ob2 : world in the console.log
 }
 
+--------------------------
+
+For Each Method
+
+
+it will take a callback function in it and run a for loop on it
+
+const numbers = [1,2,3,5]
+
+function myFunc(number ,index){
+    console.log(`The index is ${index} and number is ${number}`)
+}
+
+numbers.forEach(myFunc);
+
+-------------------------------------------------
+
+CALL IN Js (also known as function borrowing)
+
+const user1 ={
+    name:"harsh",
+    age: 8,
+    about:function(){
+        console.log(this.name , this.age);
+    }
+}
+
+
+const user2={
+    name:"yash",
+    age: 10
+}
+
+user1.about();
+user1.about.call(user2);
+
+in the 147th line we use call to define the 'this' of the function about
+let's say we are having other parameters in the function about()
+like (hobby , musician)
+
+then in the call 
+user1.about.call(user2 , "guitar" , "arijit singh")
+
+first parameter will be this
+
+
+apply is same as call but the other parameters which we pass in the call
+in apply we have to pass it like array
+user1.about.apply(user2 , ["guitar" , "arijit singh"])
+
+
+------------------------------------------------------------------
+
+Note:-
+
+Arrow function ka this nhi hota h voh apne surroundings se this leta h 
+you cannot use -> call , bind , apply with arrow functions
+as we cannot change it's this it will remain one level up
+
+const user1 ={
+    name:"harsh",
+    age: 8,
+    about:() =>{
+        console.log(this.name , this.age);
+    }
+}
+
+this will give undefined undefined as this  here is window
