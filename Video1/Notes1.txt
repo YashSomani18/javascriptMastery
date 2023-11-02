@@ -161,6 +161,11 @@ in apply we have to pass it like array
 user1.about.apply(user2 , ["guitar" , "arijit singh"])
 
 
+bind is to make the call another function and then call it as function
+
+let print = user1.about.bind(user2 , "guitar" , "arijit singh")
+print();
+
 ------------------------------------------------------------------
 
 Note:-
@@ -178,3 +183,35 @@ const user1 ={
 }
 
 this will give undefined undefined as this  here is window
+
+function inside object is called Method
+
+
+-----------------------------------------------------------------------
+SOLUTION USING OBJECT.create
+
+const obj1 = {
+    key1: "value1",
+    key2 : "value2"
+}
+
+const obj2 = Object.create(obj1);
+
+obj2.key3 = "value3";
+
+console.log(obj.key2);
+
+-> value2
+
+-------------------------------------------------------------------
+PROTOTYPE
+
+Only function provide PROTOTYPE property
+PROTOTYPE can be used as empty object
+function ke sath humme free ki space milti h jisko hum object ki tarah use kr skte h 
+function se related key value pair add kr skte h 
+--------------------------------------------------------
+New keyword in Js
+1) Create {}=this
+2) Return this automatically
+3) const user = Object.create(createUser.prototype); vala kaam khudse kredega NEW word
