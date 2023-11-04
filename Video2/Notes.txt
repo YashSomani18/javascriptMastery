@@ -30,4 +30,74 @@ callback queue to call stack.
 
 so it works seperately from the js synchronus nature.
 
+------------------------------------------------------------
 
+Promise
+
+starting mei status and value hota hoga
+status: Pending, value: NULL/Undefined
+
+then after completing Promise
+status:fulfilled , value: Output
+by taking all the necessary requirements in it.
+
+If for some reasons we don't have all the requirements in it
+then promise fill fail
+status: rejected , value: null;
+
+
+
+//PRODUCE 
+const friedRicePromise = new Promise((resolve,reject)=>{
+    if(//conditions){
+        resolve(Output , means promise fulfilled);
+    }else{
+        reject("Coudnt do it")
+    }
+})
+
+ // CONSUME the promise
+in js we consume promise more than we produce
+
+friedRicePromise.then((myFriedRice)=>
+{             // Jab pehla chalega means resolve hua hai, status:fulfilled
+    console.log("lets eat" , myFriedRice);
+},
+(error)=>{ // Jab dusra chlega that means reject hua hai, status:rejected
+    console.log(error);
+}
+)
+
+
+//Another way 
+friedRicePromise.then((myFriedRice)=>
+{             // Jab pehla chalega means resolve hua hai, status:fulfilled
+    console.log("lets eat" , myFriedRice);
+}).catch((error)=>{
+    console.log(error);
+})
+ 
+
+ Promise is an object with status and value
+
+ when we consume a promise it goes to the browser and then browser takes the work
+
+
+apart from call stack and callback queue we are having another thing
+called microTask queue which takes PROMISE in it. it has higher priority 
+than callback queue.
+
+so if we are having settimeout and a promise in the code
+
+first the whole js code is completed then the microstask is done
+and then callback queue things show up in the GEC
+
+then method hamesha promise return krega
+
+
+fetch returns a promise;
+fetch only gets rejected when internet is not there.
+in case of 404 error the catch block will not work 
+for that to work we need if else in the promise code in the then and then
+we need to throw new Error("Something went wrong !!")
+for the catch block to work.
