@@ -1,0 +1,33 @@
+Closure in JS
+
+In JS
+jab function ke andr se ek dusra function return hoga
+tab voh upar vale function ke arguments lekr return hoga
+
+function printFullName (fName , lName){
+    function  printName(){
+        console.log(fName lName);
+    }
+    return printName;
+}
+
+jab inner function return hoga tb voh outer function ke parameters lekr pass hoga
+means voh apna lexical environment ko lekr return hoga.
+----------------------------------------------------------------------
+
+settimeout
+
+javascript is synchronus in nature and we make it async for our uses
+
+so like if we write some code and then do settimeout(()=>{return log("inside)},1000);
+
+which means after 1000ms = 1 seconds
+so settimeout is nothing in js it is in the browser so js sends this to browser
+and ask it to count
+and after 1 second it will send the log("inside") to the callback queue
+and wait till the whole js code is runned then it runs send the code from
+callback queue to call stack.
+
+so it works seperately from the js synchronus nature.
+
+
